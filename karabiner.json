@@ -4,6 +4,48 @@
             "complex_modifications": {
                 "rules": [
                     {
+                        "description": "Press left shift + right shift together to toggle Caps Lock",
+                        "manipulators": [
+                          {
+                            "type": "basic",
+                            "from": {
+                              "simultaneous": [
+                                {
+                                  "key_code": "left_shift"
+                                },
+                                {
+                                  "key_code": "right_shift"
+                                }
+                              ],
+                              "simultaneous_options": {
+                                "key_down_order": "insensitive",
+                                "key_up_order": "insensitive",
+                                "key_up_when": "all"
+                              }
+                            },
+                            "to": [
+                              {
+                                "key_code": "caps_lock"
+                              }
+                            ]
+                          }
+                        ]
+                    },
+                    {
+                        "description": "Semicolon: Default on tap, Left Option on hold",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "semicolon",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "key_code": "right_command" }],
+                                "to_if_alone": [{ "key_code": "semicolon" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Caps Lock: Escape on tap, Left Control on hold",
                         "manipulators": [
                             {
