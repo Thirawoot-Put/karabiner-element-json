@@ -6,7 +6,7 @@
                     {
                         "manipulators": [
                             {
-                                "description": "Change right option to Hyper (i.e., command+control+option+shift)",
+                                "description": "Backslash: Hold to Hyper (i.e., command+control+option+shift); Tap to default (backslash)",
                                 "from": {
                                     "key_code": "backslash",
                                     "modifiers": {
@@ -44,7 +44,6 @@
                                 "to": [
                                     {"shell_command": "open -a 'Safari'"}
                                 ],
-                                "to_if_alone": [{ "key_code": "backslash" }],
                                 "type": "basic"
                             }
                         ]
@@ -63,7 +62,24 @@
                                 "to": [
                                     {"shell_command": "open -a 'kitty'"}
                                 ],
-                                "to_if_alone": [{ "key_code": "backslash" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "manipulators": [
+                            {
+                                "description": "Hyper + G: Open ChatGPT",
+                                "from": {
+                                    "key_code": "g",
+                                    "modifiers": {
+                                        "optional": ["any"],
+                                        "mandatory": ["left_shift","left_control","left_option","left_command"]
+                                    }
+                                },
+                                "to": [
+                                    {"shell_command": "open -a 'ChatGPT'"}
+                                ],
                                 "type": "basic"
                             }
                         ]
@@ -403,7 +419,7 @@
                         ]
                     }
                 ],
-                "title": "Caps Lock and SuperDuper Mode"
+                "title": "Complex Modification"
             },
             "simple_modifications": [
                 {
