@@ -4,31 +4,68 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Press left shift + right shift together to toggle Caps Lock",
                         "manipulators": [
-                          {
-                            "type": "basic",
-                            "from": {
-                              "simultaneous": [
-                                {
-                                  "key_code": "left_shift"
+                            {
+                                "description": "Change right option to Hyper (i.e., command+control+option+shift)",
+                                "from": {
+                                    "key_code": "backslash",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
                                 },
-                                {
-                                  "key_code": "right_shift"
-                                }
-                              ],
-                              "simultaneous_options": {
-                                "key_down_order": "insensitive",
-                                "key_up_order": "insensitive",
-                                "key_up_when": "all"
-                              }
-                            },
-                            "to": [
-                              {
-                                "key_code": "caps_lock"
-                              }
-                            ]
-                          }
+                                "to": [
+                                    {
+                                        "key_code": "left_shift",
+                                        "modifiers": [
+                                            "left_control",
+                                            "left_option",
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "to_if_alone": [{ "key_code": "backslash" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "manipulators": [
+                            {
+                                "description": "Hyper + W: Open Web browser (Chrome)",
+                                "from": {
+                                    "key_code": "w",
+                                    "modifiers": {
+                                        "optional": ["any"],
+                                        "mandatory": ["left_shift","left_control","left_option","left_command"]
+                                    }
+                                },
+                                "to": [
+                                    {"shell_command": "open -a 'Safari'"}
+                                ],
+                                "to_if_alone": [{ "key_code": "backslash" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "manipulators": [
+                            {
+                                "description": "Hyper + T: Open Terminal(Kitty)",
+                                "from": {
+                                    "key_code": "t",
+                                    "modifiers": {
+                                        "optional": ["any"],
+                                        "mandatory": ["left_shift","left_control","left_option","left_command"]
+                                    }
+                                },
+                                "to": [
+                                    {"shell_command": "open -a 'kitty'"}
+                                ],
+                                "to_if_alone": [{ "key_code": "backslash" }],
+                                "type": "basic"
+                            }
                         ]
                     },
                     {
