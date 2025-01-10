@@ -6,24 +6,6 @@
                     {
                         "manipulators": [
                             {
-                                "description": "Spacebar: Hold to Ctrl;  Tap to default (spacebar)",
-                                "from": {
-                                    "key_code": "spacebar",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [{ "key_code": "right_control" }],
-                                "to_if_alone": [{ "key_code": "spacebar" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "manipulators": [
-                            {
                                 "description": "Backslash: Hold to Hyper (i.e., command+control+option+shift); Tap to default (backslash)",
                                 "from": {
                                     "key_code": "backslash",
@@ -200,7 +182,7 @@
                                     "key_code": "caps_lock",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to_if_held_down": [{ "key_code": "spacebar" }],
+                                "to": [{ "key_code": "left_control" }],
                                 "to_if_alone": [{ "key_code": "escape" }],
                                 "type": "basic"
                             }
