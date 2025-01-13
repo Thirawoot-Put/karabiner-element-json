@@ -6,52 +6,58 @@
                   {
                       "description": "Remap N and V to Control when held, default when tapped",
                       "manipulators": [
-                        {
-                          "type": "basic",
-                          "from": {
-                            "key_code": "v",
-                            "modifiers": {
-                              "optional": ["any"]
+                          {
+                            "type": "basic",
+                            "from": {
+                              "key_code": "v",
+                              "modifiers": {
+                                "optional": ["any"]
+                              }
+                            },
+                            "to_if_alone": [
+                              {
+                                "key_code": "v"
+                              }
+                            ],
+                            "to_if_held_down": [
+                              {
+                                "key_code": "left_control"
+                              }
+                            ],
+                            "parameters": {
+                                "basic.to_if_alone_timeout_milliseconds": 100,
+                                "basic.to_if_held_down_threshold_milliseconds": 100
                             }
                           },
-                          "to": [
-                            {
-                             "key_code": "left_control",
-                              "hold_down_milliseconds": 500
+                          {
+                            "type": "basic",
+                            "from": {
+                              "key_code": "n",
+                              "modifiers": {
+                                "optional": ["any"]
+                              }
+                            },
+                            "to_if_alone": [
+                              {
+                                "key_code": "n"
+                              }
+                            ],
+                            "to_if_held_down": [
+                              {
+                                "key_code": "right_control"
+                              }
+                            ],
+                            "parameters": {
+                                "basic.to_if_alone_timeout_milliseconds": 100,
+                                "basic.to_if_held_down_threshold_milliseconds": 100
                             }
-                          ],
-                          "to_if_alone": [
-                            {
-                              "key_code": "v"
-                            }
-                          ]
-                        },
-                        {
-                          "type": "basic",
-                          "from": {
-                            "key_code": "n",
-                            "modifiers": {
-                              "optional": ["any"]
-                            }
-                          },
-                          "to": [
-                            {
-                              "key_code": "right_control",
-                              "hold_down_milliseconds": 500
-                            }
-                          ],
-                          "to_if_alone": [
-                            {
-                              "key_code": "n"
-                            }
-                          ]
-                        }
-                      ]
+                          }
+                        ]
                     },
                     {
                         "manipulators": [
                             {
-                                "description": "Backslash: Hold to Hyper (i.e., command+control+option+shift); Tap to default (backslash)",
+                                "description": "Backslash: Hold to Hyper (all modifiers) with other key maps; Tap to default (backslash)",
                                 "from": {
                                     "key_code": "backslash",
                                     "modifiers": {
@@ -72,11 +78,7 @@
                                 ],
                                 "to_if_alone": [{ "key_code": "backslash" }],
                                 "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "manipulators": [
+                            },
                             {
                                 "description": "Hyper + W: Open Web browser (Chrome)",
                                 "from": {
@@ -90,11 +92,7 @@
                                     {"shell_command": "open -a 'Safari'"}
                                 ],
                                 "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "manipulators": [
+                            },
                             {
                                 "description": "Hyper + T: Open Terminal(Kitty)",
                                 "from": {
@@ -108,11 +106,7 @@
                                     {"shell_command": "open -a 'kitty'"}
                                 ],
                                 "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "manipulators": [
+                            },
                             {
                                 "description": "Hyper + G: Open ChatGPT",
                                 "from": {
@@ -126,11 +120,7 @@
                                     {"shell_command": "open -a 'ChatGPT'"}
                                 ],
                                 "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "manipulators": [
+                            },
                             {
                                 "description": "Hyper + Z: To press number 10 (use with nvim)",
                                 "from": {
@@ -145,11 +135,7 @@
                                     {"key_code": "0"}
                                 ],
                                 "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "manipulators": [
+                            },
                             {
                                 "description": "Hyper + X: To press number 20 (use with nvim)",
                                 "from": {
@@ -164,11 +150,7 @@
                                     {"key_code": "0"}
                                 ],
                                 "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "manipulators": [
+                            },
                             {
                                 "description": "Hyper + C: To press number 30 (use with nvim)",
                                 "from": {
@@ -183,11 +165,7 @@
                                     {"key_code": "0"}
                                 ],
                                 "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "manipulators": [
+                            },
                             {
                                 "description": "Hyper + V: To press number 40 (use with nvim)",
                                 "from": {
