@@ -206,14 +206,23 @@
                         ]
                     },
                     {
-                        "description": "Caps Lock: Escape on tap, Spacebar Control on hold",
+                        "description": "Caps Lock: Escape on tap, Hyper on hold",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "caps_lock",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": [{ "key_code": "left_control" }],
+                                "to": [
+                                    {
+                                        "key_code": "left_shift",
+                                        "modifiers": [
+                                            "left_control",
+                                            "left_option",
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
                                 "to_if_alone": [{ "key_code": "escape" }],
                                 "type": "basic"
                             }
